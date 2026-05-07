@@ -91,8 +91,7 @@
 .btn-space__bloom,
 .btn-space__border,
 .btn-space__shine,
-.btn-space__nebula,
-.btn-space__particles {
+.btn-space__nebula {
   position: absolute;
   border-radius: var(--space-btn-radius);
   pointer-events: none;
@@ -181,21 +180,6 @@
   transition: left 0.12s ease-out;
 }
 
-.btn-space__particles {
-  inset: -28px;
-  overflow: visible;
-}
-
-.btn-space__particle {
-  position: absolute;
-  top: var(--y, 50%);
-  left: var(--x, 50%);
-  width: var(--s, 3px);
-  height: var(--s, 3px);
-  border-radius: 50%;
-  background: rgb(var(--space-btn-accent-soft-rgb) / var(--a, 0.7));
-  opacity: 0;
-}
 
 .btn-space__label {
   position: relative;
@@ -212,10 +196,6 @@
   opacity: 1;
 }
 
-.btn-space:hover .btn-space__particle {
-  animation: btn-space-float var(--d, 2.5s) var(--delay, 0s) infinite ease-out;
-}
-
 .btn-space__ripple {
   position: absolute;
   z-index: 4;
@@ -226,26 +206,6 @@
   pointer-events: none;
   transform: translate(-50%, -50%) scale(0);
   animation: btn-space-ripple 0.6s ease-out forwards;
-}
-
-@keyframes btn-space-float {
-  0% {
-    opacity: 0;
-    transform: translate(0, 0) scale(1);
-  }
-
-  20% {
-    opacity: var(--a, 0.7);
-  }
-
-  80% {
-    opacity: calc(var(--a, 0.7) * 0.55);
-  }
-
-  100% {
-    opacity: 0;
-    transform: translate(var(--tx, 10px), var(--ty, -30px)) scale(0.3);
-  }
 }
 
 @keyframes btn-space-ripple {
@@ -354,7 +314,6 @@
 }
 
 @media (pointer: coarse) {
-  .btn-space__particles,
   .btn-space__shine,
   .btn-space__bloom {
     display: none;

@@ -256,10 +256,6 @@
   opacity: 1;
 }
 
-.nav-cta .btn-space .btn-space__particle {
-  animation: btn-space-float var(--d, 2.5s) var(--delay, 0s) infinite ease-out;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .main-nav__submenu {
     transition-duration: 0.01ms;
