@@ -1,1 +1,22 @@
 /* Home page styles. */
+
+.home-hero__actions .btn-space {
+  --space-btn-fg-hover: var(--color-dark-blue);
+  --space-btn-accent-rgb: var(--color-dark-blue-rgb);
+  --space-btn-accent-soft-rgb: 0 31 62;
+  --space-btn-accent-strong-rgb: var(--color-dark-blue-rgb);
+}
+
+.home-hero__actions .btn-space:hover .btn-space__fill {
+  background: var(--color-accent);
+}
+
+.home-hero__actions .btn-space {
+  --space-btn-bg: var(--color-accent);
+  --space-btn-fg: var(--color-dark-blue);
+  --space-btn-fg-hover: var(--color-dark-blue);
+  --space-btn-accent-rgb: var(--color-dark-blue-rgb);
+  --space-btn-accent-soft-rgb: 0 31 62;
+  --space-btn-accent-strong-rgb: var(--color-dark-blue-rgb);
+  color: var(--color-dark-blue);
+}
