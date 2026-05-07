@@ -1,1 +1,29 @@
 /* Home page styles. */
+
+.home-hero__actions .btn-space {
+  --space-btn-bg: var(--color-accent);
+  --space-btn-fg: var(--color-dark-blue);
+  --space-btn-fg-hover: var(--color-dark-blue);
+  --space-btn-accent-rgb: var(--color-dark-blue-rgb);
+  --space-btn-accent-soft-rgb: 0 31 62;
+  --space-btn-accent-strong-rgb: var(--color-dark-blue-rgb);
+  --space-btn-nebula-a: 0.2;
+  --space-btn-nebula-b: 0.1;
+  color: var(--color-dark-blue);
+}
+
+.home-hero__actions .btn-space .btn-space__fill {
+  background: radial-gradient(
+    ellipse 90% 120% at 70% 40%,
+    rgb(var(--color-dark-blue-rgb) / 38%) 0%,
+    rgb(var(--color-dark-blue-rgb) / 18%) 40%,
+    var(--color-accent) 76%
+  );
+}
+
+.home-hero__actions .btn-space .btn-space__bloom,
+.home-hero__actions .btn-space .btn-space__border,
+.home-hero__actions .btn-space .btn-space__shine,
+.home-hero__actions .btn-space .btn-space__nebula {
+  opacity: 1;
+}
