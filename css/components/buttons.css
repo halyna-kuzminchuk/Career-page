@@ -1,0 +1,362 @@
+.btn {
+  --space-btn-bg: #070d1a;
+  --space-btn-fg: rgb(var(--color-white-rgb) / 90%);
+  --space-btn-fg-hover: var(--color-white);
+  --space-btn-accent-rgb: var(--color-cyan-rgb);
+  --space-btn-accent-soft-rgb: var(--color-cyan-rgb);
+  --space-btn-accent-strong-rgb: var(--color-cyan-rgb);
+  --space-btn-nebula-a: 0.34;
+  --space-btn-nebula-b: 0.16;
+  --space-btn-radius: 999px;
+  --mx: 70%;
+  --my: 40%;
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--space-btn-radius);
+  background: transparent;
+  color: var(--space-btn-fg);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  overflow: visible;
+  isolation: isolate;
+  transition:
+    transform var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.btn-space.btn--red,
+.btn-space.btn--primary,
+.btn-space.btn--cta,
+.btn-space.btn--accent {
+  --space-btn-accent-rgb: var(--color-accent-rgb);
+  --space-btn-accent-soft-rgb: 255 212 120;
+  --space-btn-accent-strong-rgb: var(--color-accent-rgb);
+  --space-btn-nebula-a: 0.26;
+  --space-btn-nebula-b: 0.12;
+}
+
+.btn-space.btn--outline {
+  --space-btn-accent-rgb: var(--color-cyan-rgb);
+  --space-btn-accent-soft-rgb: 130 226 255;
+  --space-btn-accent-strong-rgb: var(--color-cyan-rgb);
+  --space-btn-nebula-a: 0.32;
+  --space-btn-nebula-b: 0.17;
+}
+
+.btn-space::before,
+.btn-space::after {
+  content: none;
+}
+
+.btn-space:hover {
+  color: var(--space-btn-fg-hover);
+  transform: translateY(-1px);
+}
+
+.btn-space:active {
+  transform: translateY(1px);
+}
+
+.btn-space__fill {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: var(--space-btn-radius);
+  background: var(--space-btn-bg);
+  transition: background 0.45s ease;
+}
+
+.btn-space:hover .btn-space__fill {
+  background: radial-gradient(
+    ellipse 90% 120% at var(--mx) var(--my),
+    rgb(var(--space-btn-accent-rgb) / 42%) 0%,
+    rgb(var(--space-btn-accent-rgb) / 24%) 40%,
+    var(--space-btn-bg) 76%
+  );
+}
+
+.btn-space__bloom,
+.btn-space__border,
+.btn-space__shine,
+.btn-space__nebula,
+.btn-space__particles {
+  position: absolute;
+  border-radius: var(--space-btn-radius);
+  pointer-events: none;
+}
+
+.btn-space__bloom {
+  inset: -3px;
+  z-index: -2;
+  opacity: 0;
+  filter: blur(8px);
+  transition: opacity 0.35s ease;
+  background: conic-gradient(
+    from 180deg at var(--mx) var(--my),
+    transparent 0deg,
+    rgb(var(--space-btn-accent-rgb) / 0%) 60deg,
+    rgb(var(--space-btn-accent-rgb) / 42%) 90deg,
+    rgb(var(--space-btn-accent-rgb) / 0%) 120deg,
+    transparent 180deg,
+    transparent 360deg
+  );
+}
+
+.btn-space__border,
+.btn-space__shine {
+  inset: 0;
+  padding: 1.5px;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.btn-space__border {
+  z-index: 1;
+  background: conic-gradient(
+    from 180deg at var(--mx) var(--my),
+    rgb(var(--space-btn-accent-rgb) / 0%) 0deg,
+    rgb(var(--space-btn-accent-rgb) / 90%) 60deg,
+    rgb(var(--space-btn-accent-soft-rgb) / 100%) 90deg,
+    rgb(var(--space-btn-accent-rgb) / 90%) 120deg,
+    rgb(var(--space-btn-accent-rgb) / 0%) 180deg,
+    rgb(var(--space-btn-accent-rgb) / 0%) 360deg
+  );
+}
+
+.btn-space__shine {
+  z-index: 2;
+  transition-duration: 0.3s;
+  background: conic-gradient(
+    from 180deg at var(--mx) var(--my),
+    transparent 0deg,
+    transparent 50deg,
+    rgb(var(--space-btn-accent-soft-rgb) / 0%) 55deg,
+    rgb(var(--space-btn-accent-soft-rgb) / 100%) 90deg,
+    rgb(var(--space-btn-accent-soft-rgb) / 0%) 125deg,
+    transparent 130deg,
+    transparent 360deg
+  );
+}
+
+.btn-space__nebula {
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.btn-space__nebula::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: calc(var(--mx) - 100%);
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    ellipse 50% 60% at 50% 50%,
+    rgb(var(--space-btn-accent-strong-rgb) / var(--space-btn-nebula-a)) 0%,
+    rgb(var(--space-btn-accent-rgb) / var(--space-btn-nebula-b)) 52%,
+    transparent 72%
+  );
+  filter: blur(4px);
+  transition: left 0.12s ease-out;
+}
+
+.btn-space__particles {
+  inset: -28px;
+  overflow: visible;
+}
+
+.btn-space__particle {
+  position: absolute;
+  top: var(--y, 50%);
+  left: var(--x, 50%);
+  width: var(--s, 3px);
+  height: var(--s, 3px);
+  border-radius: 50%;
+  background: rgb(var(--space-btn-accent-soft-rgb) / var(--a, 0.7));
+  opacity: 0;
+}
+
+.btn-space__label {
+  position: relative;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: inherit;
+}
+
+.btn-space:hover .btn-space__bloom,
+.btn-space:hover .btn-space__border,
+.btn-space:hover .btn-space__shine,
+.btn-space:hover .btn-space__nebula {
+  opacity: 1;
+}
+
+.btn-space:hover .btn-space__particle {
+  animation: btn-space-float var(--d, 2.5s) var(--delay, 0s) infinite ease-out;
+}
+
+.btn-space__ripple {
+  position: absolute;
+  z-index: 4;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgb(var(--space-btn-accent-soft-rgb) / 45%);
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0);
+  animation: btn-space-ripple 0.6s ease-out forwards;
+}
+
+@keyframes btn-space-float {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(1);
+  }
+
+  20% {
+    opacity: var(--a, 0.7);
+  }
+
+  80% {
+    opacity: calc(var(--a, 0.7) * 0.55);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(var(--tx, 10px), var(--ty, -30px)) scale(0.3);
+  }
+}
+
+@keyframes btn-space-ripple {
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(18);
+  }
+}
+
+.btn-basic {
+  color: var(--btn-basic-fg, var(--color-white));
+  background: var(--btn-basic-bg, #070d1a);
+  border: 1px solid var(--btn-basic-border, #070d1a);
+  border-radius: 999px;
+  letter-spacing: 0.03em;
+  transform: none !important;
+}
+
+.btn-basic.btn--sm {
+  border-radius: 999px;
+}
+
+.btn-basic::before,
+.btn-basic::after,
+.btn-basic .btn-space__fill,
+.btn-basic .btn-space__bloom,
+.btn-basic .btn-space__border,
+.btn-basic .btn-space__shine,
+.btn-basic .btn-space__particles,
+.btn-basic .btn-space__nebula {
+  display: none !important;
+}
+
+.btn-basic--red,
+.btn-basic--accent {
+  --btn-basic-bg: var(--color-accent);
+  --btn-basic-fg: var(--color-white);
+  --btn-basic-border: var(--color-accent);
+}
+
+.btn-basic--dark {
+  --btn-basic-bg: #070d1a;
+  --btn-basic-fg: var(--color-white);
+  --btn-basic-border: #070d1a;
+}
+
+.btn-basic--outline-dark {
+  --btn-basic-bg: transparent;
+  --btn-basic-fg: var(--color-dark-blue);
+  --btn-basic-border: rgb(var(--color-dark-blue-rgb) / 25%);
+}
+
+.btn-basic:hover {
+  filter: brightness(1.05);
+}
+
+.btn-basic:active {
+  filter: brightness(0.95);
+  transform: translateY(1px) !important;
+}
+
+.btn--ghost {
+  padding-left: 0;
+  padding-right: 0;
+  border-color: transparent;
+  color: var(--color-accent);
+  letter-spacing: 0.03em;
+}
+
+.btn--ghost::before,
+.btn--ghost::after {
+  display: none;
+}
+
+.btn--ghost:hover {
+  color: rgb(var(--color-accent-rgb) / 85%);
+  transform: none;
+}
+
+.btn--sm {
+  padding: 0.5rem 1rem;
+  font-size: var(--text-xs);
+}
+
+.btn--md {
+  padding: 0.875rem 1.75rem;
+  font-size: var(--text-base);
+}
+
+.btn--lg {
+  padding: 1rem 2rem;
+  font-size: var(--text-base);
+}
+
+.home-hero .btn-space,
+.page-hero .btn-space {
+  --space-btn-bg: var(--color-dark-blue);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-space,
+  .btn-space * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@media (pointer: coarse) {
+  .btn-space__particles,
+  .btn-space__shine,
+  .btn-space__bloom {
+    display: none;
+  }
+}
