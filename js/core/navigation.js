@@ -43,6 +43,7 @@ function openWorkMenu() {
   workMenu.hidden = false;
   workToggle.setAttribute("aria-expanded", "true");
   workMenu.style.maxHeight = "0px";
+  workMenu.offsetHeight; // force layout so transition has a start state
 
   requestAnimationFrame(() => {
     workMenu.classList.add("is-open");

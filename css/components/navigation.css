@@ -47,11 +47,16 @@
   height: 2.75rem;
   align-items: center;
   justify-content: center;
-  border: 0;
+  border: 1px solid rgb(var(--color-cyan-rgb) / 0.45);
   border-radius: 4px;
-  background-color: var(--color-accent);
+  background-color: transparent;
   color: var(--color-white);
   cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.nav-toggle:hover {
+  background-color: rgb(var(--color-white-rgb) / 0.08);
 }
 
 .nav-toggle__bar,
@@ -62,6 +67,10 @@
   height: 2px;
   border-radius: 2px;
   background-color: currentColor;
+  transition:
+    transform 0.25s ease,
+    background-color 0.2s ease,
+    inset-block-start 0.25s ease;
 }
 
 .nav-toggle__bar {
@@ -83,18 +92,50 @@
   inset-block-start: 6px;
 }
 
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar {
+  background-color: transparent;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar::before {
+  inset-block-start: 0;
+  transform: rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar::after {
+  inset-block-start: 0;
+  transform: rotate(-45deg);
+}
+
 .main-nav {
-  position: absolute;
-  inset-block-start: 100%;
+  position: fixed;
+  top: 5.5rem;
   inset-inline: 0;
-  display: none;
+  z-index: 19;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
   padding: var(--space-4);
   background-color: var(--color-dark-blue);
   border-bottom: 0;
+  opacity: 0;
+  transform: translateY(-110%);
+  pointer-events: none;
+  visibility: hidden;
+  transition:
+    opacity 0.25s ease,
+    transform 0.35s ease,
+    visibility 0s 0.35s;
 }
 
 .main-nav.is-open {
-  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  visibility: visible;
+  transition:
+    opacity 0.25s ease,
+    transform 0.35s ease,
+    visibility 0s 0s;
 }
 
 .main-nav__list {
@@ -190,13 +231,21 @@
 
   .main-nav {
     position: static;
+    top: auto;
+    z-index: auto;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: flex-end;
     gap: var(--space-12);
     padding: 0;
     background-color: transparent;
     border-bottom: 0;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    visibility: visible;
+    transition: none;
   }
 
   .main-nav__list {
@@ -247,7 +296,11 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .main-nav__submenu {
+  .main-nav,
+  .main-nav__submenu,
+  .nav-toggle__bar,
+  .nav-toggle__bar::before,
+  .nav-toggle__bar::after {
     transition-duration: 0.01ms;
   }
 }

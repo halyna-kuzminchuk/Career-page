@@ -26,6 +26,27 @@
   gap: var(--space-8);
 }
 
+@media (max-width: 767px) {
+  .page-grid {
+    background-image:
+      radial-gradient(
+        circle,
+        var(--grid-line-color) var(--grid-dot-size),
+        transparent calc(var(--grid-dot-size) + 0.5px)
+      ),
+      radial-gradient(
+        circle,
+        var(--grid-line-color) var(--grid-dot-size),
+        transparent calc(var(--grid-dot-size) + 0.5px)
+      );
+    background-size: 1px var(--grid-dot-gap), 1px var(--grid-dot-gap);
+    background-position:
+      var(--container-gutter) top,
+      calc(100% - var(--container-gutter)) top;
+    background-repeat: repeat-y, repeat-y;
+  }
+}
+
 @media (min-width: 768px) {
   :root {
     --container-gutter: var(--space-8);

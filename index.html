@@ -19,131 +19,45 @@
   <body class="page-grid">
     <a href="#main" class="skip-link">Skip to main content</a>
 
-    <header class="site-header" role="banner">
-      <div class="container site-header__inner">
-        <a
-          class="site-logo"
-          href="index.html"
-          aria-label="MacArtney Careers home"
-        >
-          <img
-            class="site-logo__image"
-            src="assets/Logo.svg"
-            alt="MacArtney"
-            width="242"
-            height="49"
-          />
-          <span class="site-logo__label">Careers</span>
-        </a>
-
-        <button
-          class="nav-toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="main-nav"
-          aria-label="Toggle navigation"
-        >
-          <span class="nav-toggle__bar" aria-hidden="true"></span>
-        </button>
-
-        <nav class="main-nav" id="main-nav" aria-label="Main navigation">
-          <ul class="main-nav__list">
-            <li class="main-nav__item main-nav__item--has-menu">
-              <button
-                class="main-nav__summary"
-                type="button"
-                aria-expanded="false"
-                aria-controls="work-menu"
-              >
-                Work
-              </button>
-              <ul
-                class="main-nav__submenu"
-                id="work-menu"
-                aria-label="Work categories"
-                hidden
-              >
-                <li>
-                  <a class="main-nav__submenu-link" href="sales.html">Sales</a>
-                </li>
-                <li>
-                  <a class="main-nav__submenu-link" href="engineering.html">
-                    Engineering
-                  </a>
-                </li>
-                <li>
-                  <a class="main-nav__submenu-link" href="workshop.html">
-                    Workshop
-                  </a>
-                </li>
-                <li>
-                  <a
-                    class="main-nav__submenu-link"
-                    href="business-support.html"
-                  >
-                    Business Support
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="main-nav__item">
-              <a class="main-nav__link" href="locations.html">Locations</a>
-            </li>
-            <li class="main-nav__item">
-              <a class="main-nav__link" href="sustainability.html">
-                Sustainability
-              </a>
-            </li>
-          </ul>
-          <div class="nav-cta">
-            <a class="btn btn-space btn--primary btn--md" href="search.html">
-              <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="7"/>
-                <line x1="16.5" y1="16.5" x2="22" y2="22"/>
-              </svg>
-              Jobs
-            </a>
-          </div>
-        </nav>
-      </div>
-    </header>
+    <header class="site-header" role="banner"></header>
 
     <main class="site-main" id="main">
       <section class="home-hero" aria-labelledby="hero-title">
         <div class="container home-hero__inner">
-          <div class="home-hero__text-area">
+          <div class="page-hero__text-area">
             <span class="hero__eyebrow">MacArtney Careers</span>
-            <h1 class="home-hero__title" id="hero-title">
-              Join us to <span class="home-hero__title-accent">connect</span>
+            <h1 class="page-hero__title" id="hero-title">
+              Join us to <span class="page-hero__title-accent">connect</span>
             </h1>
-            <p class="home-hero__subtitle">
+            <p class="page-hero__subtitle">
               There's a place here for every kind of expertise.
             </p>
-            <div class="home-hero__actions">
+            <div class="page-hero__actions">
               <a class="btn btn-space btn--primary btn--md" href="search.html"
                 >Explore Roles</a
               >
             </div>
           </div>
 
-          <div class="home-hero__media" aria-hidden="true">
-            <div class="home-hero__col home-hero__col--left">
-              <div class="home-hero__photo home-hero__photo--1"></div>
-              <div class="home-hero__video-card">
-                <p class="home-hero__video-title">Life at MacArtney</p>
-                <a class="home-hero__video-link" href="#">Watch video &rarr;</a>
+          <div class="media-grid" aria-hidden="true">
+            <div class="media-grid__col media-grid__col--left">
+              <div class="media-grid__photo media-grid__photo--landscape"></div>
+              <div class="media-grid__video-card">
+                <p class="media-grid__video-title">Life at MacArtney</p>
+                <a class="media-grid__video-link" href="#">Watch video &rarr;</a>
               </div>
-              <div class="home-hero__photo home-hero__photo--3"></div>
+              <div class="media-grid__photo media-grid__photo--landscape"></div>
             </div>
-            <div class="home-hero__col home-hero__col--right">
-              <div class="home-hero__photo home-hero__photo--2"></div>
-              <div class="home-hero__photo home-hero__photo--4"></div>
+            <div class="media-grid__col media-grid__col--right">
+              <div class="media-grid__photo media-grid__photo--portrait"></div>
+              <div class="media-grid__photo media-grid__photo--portrait"></div>
             </div>
           </div>
         </div>
       </section>
     </main>
 
+    <script type="module" src="js/core/header.js"></script>
     <script type="module" src="js/core/navigation.js"></script>
     <script type="module" src="js/core/buttons.js"></script>
   </body>
