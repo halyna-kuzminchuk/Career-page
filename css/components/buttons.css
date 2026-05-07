@@ -41,9 +41,9 @@
 .btn-space.btn--primary,
 .btn-space.btn--cta,
 .btn-space.btn--accent {
-  --space-btn-accent-rgb: var(--color-accent-rgb);
-  --space-btn-accent-soft-rgb: 255 212 120;
-  --space-btn-accent-strong-rgb: var(--color-accent-rgb);
+  --space-btn-accent-rgb: var(--color-cyan-rgb);
+  --space-btn-accent-soft-rgb: 130 226 255;
+  --space-btn-accent-strong-rgb: var(--color-cyan-rgb);
   --space-btn-nebula-a: 0.26;
   --space-btn-nebula-b: 0.12;
 }
