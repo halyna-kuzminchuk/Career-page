@@ -79,14 +79,7 @@
   transition: background 0.45s ease;
 }
 
-.btn-space:hover .btn-space__fill {
-  background: radial-gradient(
-    ellipse 90% 120% at var(--mx) var(--my),
-    rgb(var(--space-btn-accent-rgb) / 42%) 0%,
-    rgb(var(--space-btn-accent-rgb) / 24%) 40%,
-    var(--space-btn-bg) 76%
-  );
-}
+
 
 .btn-space__bloom,
 .btn-space__border,
@@ -205,10 +198,8 @@
   gap: inherit;
 }
 
-.btn-space:hover .btn-space__bloom,
 .btn-space:hover .btn-space__border,
-.btn-space:hover .btn-space__shine,
-.btn-space:hover .btn-space__nebula {
+.btn-space:hover .btn-space__shine {
   opacity: 1;
 }
 
