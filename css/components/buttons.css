@@ -37,23 +37,12 @@
     color var(--transition-fast);
 }
 
-.btn-space.btn--red,
-.btn-space.btn--primary,
-.btn-space.btn--cta,
-.btn-space.btn--accent {
+.btn-space.btn--primary {
   --space-btn-accent-rgb: var(--color-cyan-rgb);
   --space-btn-accent-soft-rgb: 130 226 255;
   --space-btn-accent-strong-rgb: var(--color-cyan-rgb);
   --space-btn-nebula-a: 0.26;
   --space-btn-nebula-b: 0.12;
-}
-
-.btn-space.btn--outline {
-  --space-btn-accent-rgb: var(--color-cyan-rgb);
-  --space-btn-accent-soft-rgb: 130 226 255;
-  --space-btn-accent-strong-rgb: var(--color-cyan-rgb);
-  --space-btn-nebula-a: 0.32;
-  --space-btn-nebula-b: 0.17;
 }
 
 .btn-space::before,
@@ -246,88 +235,8 @@
   }
 }
 
-.btn-basic {
-  color: var(--btn-basic-fg, var(--color-white));
-  background: var(--btn-basic-bg, #070d1a);
-  border: 1px solid var(--btn-basic-border, #070d1a);
-  border-radius: 999px;
-  letter-spacing: 0.03em;
-  transform: none !important;
-}
-
-.btn-basic.btn--sm {
-  border-radius: 999px;
-}
-
-.btn-basic::before,
-.btn-basic::after,
-.btn-basic .btn-space__fill,
-.btn-basic .btn-space__bloom,
-.btn-basic .btn-space__border,
-.btn-basic .btn-space__shine,
-.btn-basic .btn-space__particles,
-.btn-basic .btn-space__nebula {
-  display: none !important;
-}
-
-.btn-basic--red,
-.btn-basic--accent {
-  --btn-basic-bg: var(--color-accent);
-  --btn-basic-fg: var(--color-white);
-  --btn-basic-border: var(--color-accent);
-}
-
-.btn-basic--dark {
-  --btn-basic-bg: #070d1a;
-  --btn-basic-fg: var(--color-white);
-  --btn-basic-border: #070d1a;
-}
-
-.btn-basic--outline-dark {
-  --btn-basic-bg: transparent;
-  --btn-basic-fg: var(--color-dark-blue);
-  --btn-basic-border: rgb(var(--color-dark-blue-rgb) / 25%);
-}
-
-.btn-basic:hover {
-  filter: brightness(1.05);
-}
-
-.btn-basic:active {
-  filter: brightness(0.95);
-  transform: translateY(1px) !important;
-}
-
-.btn--ghost {
-  padding-left: 0;
-  padding-right: 0;
-  border-color: transparent;
-  color: var(--color-accent);
-  letter-spacing: 0.03em;
-}
-
-.btn--ghost::before,
-.btn--ghost::after {
-  display: none;
-}
-
-.btn--ghost:hover {
-  color: rgb(var(--color-accent-rgb) / 85%);
-  transform: none;
-}
-
-.btn--sm {
-  padding: 0.5rem 1rem;
-  font-size: var(--text-xs);
-}
-
 .btn--md {
   padding: 0.875rem 1.75rem;
-  font-size: var(--text-base);
-}
-
-.btn--lg {
-  padding: 1rem 2rem;
   font-size: var(--text-base);
 }
 
