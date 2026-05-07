@@ -112,15 +112,25 @@
 .main-nav__link,
 .main-nav__summary {
   display: block;
-  padding: var(--space-3) 0;
+  padding: var(--space-3) var(--space-4);
   border: 0;
+  border-radius: var(--radius-sm);
   background: transparent;
-  color: var(--color-white);
+  color: rgb(var(--color-white-rgb) / 0.75);
   font: inherit;
   font-weight: 400;
   line-height: 1.2;
   text-decoration: none;
   cursor: pointer;
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.main-nav__link:hover,
+.main-nav__summary:hover {
+  color: var(--color-white);
+  background-color: rgb(var(--color-white-rgb) / 0.08);
 }
 
 .main-nav__summary::after {
@@ -201,7 +211,7 @@
 
   .main-nav__link,
   .main-nav__summary {
-    padding: var(--space-2) 0;
+    padding: var(--space-2) var(--space-3);
   }
 
   .main-nav__submenu {
