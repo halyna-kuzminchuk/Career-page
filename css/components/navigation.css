@@ -236,6 +236,30 @@
   }
 }
 
+.nav-cta .btn-space {
+  color: var(--space-btn-fg-hover);
+}
+
+.nav-cta .btn-space .btn-space__fill {
+  background: radial-gradient(
+    ellipse 90% 120% at 70% 40%,
+    rgb(var(--space-btn-accent-rgb) / 42%) 0%,
+    rgb(var(--space-btn-accent-rgb) / 24%) 40%,
+    var(--space-btn-bg) 76%
+  );
+}
+
+.nav-cta .btn-space .btn-space__bloom,
+.nav-cta .btn-space .btn-space__border,
+.nav-cta .btn-space .btn-space__shine,
+.nav-cta .btn-space .btn-space__nebula {
+  opacity: 1;
+}
+
+.nav-cta .btn-space .btn-space__particle {
+  animation: btn-space-float var(--d, 2.5s) var(--delay, 0s) infinite ease-out;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .main-nav__submenu {
     transition-duration: 0.01ms;
