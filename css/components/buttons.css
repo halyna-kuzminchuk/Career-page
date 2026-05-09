@@ -2,9 +2,9 @@
   --space-btn-bg: #070d1a;
   --space-btn-fg: rgb(var(--color-white-rgb) / 90%);
   --space-btn-fg-hover: var(--color-white);
-  --space-btn-accent-rgb: var(--color-cyan-rgb);
-  --space-btn-accent-soft-rgb: var(--color-cyan-rgb);
-  --space-btn-accent-strong-rgb: var(--color-cyan-rgb);
+  --space-btn-accent-rgb: var(--color-accent-rgb);
+  --space-btn-accent-soft-rgb: var(--color-accent-rgb);
+  --space-btn-accent-strong-rgb: var(--color-accent-rgb);
   --space-btn-nebula-a: 0.34;
   --space-btn-nebula-b: 0.16;
   --space-btn-radius: 999px;
@@ -38,11 +38,19 @@
 }
 
 .btn-space.btn--primary {
-  --space-btn-accent-rgb: var(--color-cyan-rgb);
-  --space-btn-accent-soft-rgb: 130 226 255;
-  --space-btn-accent-strong-rgb: var(--color-cyan-rgb);
+  --space-btn-accent-rgb: var(--color-accent-rgb);
+  --space-btn-accent-soft-rgb: 255 205 120;
+  --space-btn-accent-strong-rgb: var(--color-accent-rgb);
   --space-btn-nebula-a: 0.26;
   --space-btn-nebula-b: 0.12;
+}
+
+.btn-space {
+  box-shadow: 0 0 0 2px rgb(var(--space-btn-accent-rgb) / 0.55);
+  transition:
+    transform var(--transition-fast),
+    color var(--transition-fast),
+    box-shadow 0.25s ease;
 }
 
 .btn-space::before,
@@ -53,6 +61,7 @@
 .btn-space:hover {
   color: var(--space-btn-fg-hover);
   transform: translateY(-1px);
+  box-shadow: none;
 }
 
 .btn-space:active {
@@ -238,6 +247,14 @@
 .btn--md {
   padding: 0.875rem 1.75rem;
   font-size: var(--text-base);
+}
+
+.btn-space.btn--cyan {
+  --space-btn-accent-rgb: var(--color-cyan-rgb);
+  --space-btn-accent-soft-rgb: 130 226 255;
+  --space-btn-accent-strong-rgb: var(--color-cyan-rgb);
+  --space-btn-nebula-a: 0.32;
+  --space-btn-nebula-b: 0.17;
 }
 
 .home-hero .btn-space,

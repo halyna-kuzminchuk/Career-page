@@ -11,6 +11,7 @@
   --color-cyan-rgb: 62 145 173;
   --color-accent-rgb: 252 179 49;
   --color-white-rgb: 247 246 249;
+  --color-grey-rgb: 202 208 217;
 
   /* Photography gradient */
   --photo-gradient-0: #E8F1F8;
@@ -66,11 +67,16 @@
 
   /* Layout */
   --container-max: 1180px;
-  --container-gutter: var(--space-4);
+  --container-gutter: var(--space-6);
   --grid-line-color: rgb(var(--color-cyan-rgb) / 18%);
   --grid-dot-size: 1px;
   --grid-dot-gap: 0.5rem;
   --grid-column-width: 21.5rem;
+  --dot-grid: radial-gradient(
+    circle,
+    var(--grid-line-color) var(--grid-dot-size),
+    transparent calc(var(--grid-dot-size) + 0.5px)
+  );
 
   /* Motion */
   --transition-fast: 0.15s ease;

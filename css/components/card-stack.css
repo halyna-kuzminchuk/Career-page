@@ -1,0 +1,111 @@
+/* ── Card Stack component ─────────────────────────────────── */
+.card-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .card-stack {
+    position: sticky;
+    top: var(--space-16);
+  }
+}
+
+@media (max-width: 767px) {
+  .card-stack {
+    display: none;
+  }
+}
+
+.card-stack__stage {
+  display: grid;
+  overflow: visible;
+}
+
+.card-stack__card {
+  grid-area: 1 / 1;
+  position: relative;
+  background: var(--color-white);
+  border-radius: 0;
+  padding: var(--space-8);
+  border: 1px solid rgb(var(--color-dark-blue-rgb) / 0.06);
+  border-top: 3px solid var(--color-accent);
+  box-shadow:
+    0 4px 24px rgb(var(--color-dark-blue-rgb) / 0.1),
+    0 1px 4px rgb(var(--color-dark-blue-rgb) / 0.06);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  z-index: 0;
+  transition:
+    transform 0.4s cubic-bezier(0.34, 1.2, 0.64, 1),
+    opacity 0.3s ease;
+}
+
+.card-stack__card[data-stack="1"] {
+  transform: translateY(10px) scaleX(0.92);
+  opacity: 0.55;
+  z-index: 1;
+}
+
+.card-stack__card.is-active {
+  opacity: 1;
+  transform: none;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+@keyframes card-stack-pull-forward {
+  from {
+    transform: translateY(10px) scaleX(0.92);
+    opacity: 0.6;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.card-stack__card.is-active.is-animating {
+  animation: card-stack-pull-forward 0.4s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
+}
+
+.card-stack__card-icon {
+  font-size: 2rem;
+  margin-block-end: var(--space-4);
+  line-height: 1;
+}
+
+.card-stack__card-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-dark-blue);
+  margin-block-end: var(--space-3);
+}
+
+.card-stack__card-text {
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  color: rgb(var(--color-dark-blue-rgb) / 0.6);
+  margin: 0;
+}
+
+.card-stack__dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.card-stack__dot {
+  height: 3px;
+  width: 1.5rem;
+  background: rgb(var(--color-dark-blue-rgb) / 0.18);
+  transition: background var(--transition-base);
+}
+
+.card-stack__dot.is-active {
+  background: var(--color-accent);
+}

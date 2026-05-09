@@ -4,11 +4,7 @@
 
 .page-grid {
   background-color: var(--color-white);
-  background-image: radial-gradient(
-    circle,
-    var(--grid-line-color) var(--grid-dot-size),
-    transparent calc(var(--grid-dot-size) + 0.5px)
-  );
+  background-image: var(--dot-grid);
   background-size: var(--grid-column-width) var(--grid-dot-gap);
   background-position: center top;
 }
@@ -28,17 +24,7 @@
 
 @media (max-width: 767px) {
   .page-grid {
-    background-image:
-      radial-gradient(
-        circle,
-        var(--grid-line-color) var(--grid-dot-size),
-        transparent calc(var(--grid-dot-size) + 0.5px)
-      ),
-      radial-gradient(
-        circle,
-        var(--grid-line-color) var(--grid-dot-size),
-        transparent calc(var(--grid-dot-size) + 0.5px)
-      );
+    background-image: var(--dot-grid), var(--dot-grid);
     background-size: 1px var(--grid-dot-gap), 1px var(--grid-dot-gap);
     background-position:
       var(--container-gutter) top,
