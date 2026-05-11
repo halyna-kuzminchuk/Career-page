@@ -192,7 +192,7 @@
   display: block;
   width: 2.5rem;
   height: auto;
-  margin: 0 auto var(--space-5);
+  margin: 0 0 var(--space-6);
   position: relative;
   z-index: 1;
 }
@@ -201,7 +201,7 @@
   font-size: var(--text-md);
   line-height: 1.7;
   color: var(--color-dark-blue);
-  margin: 0 0 var(--space-5);
+  margin: 0 0 var(--space-6);
   font-style: normal;
 }
 

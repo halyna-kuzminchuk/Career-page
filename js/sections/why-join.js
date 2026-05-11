@@ -19,7 +19,9 @@ if (section) {
     const card = stackEl?.querySelector(`.card-stack__card[data-card="${id}"]`);
     if (!card || !sheet) return;
 
-    sheetIcon.textContent = card.querySelector('.card-stack__card-icon').textContent;
+    const iconEl = card.querySelector('.card-stack__card-icon');
+    sheetIcon.innerHTML = '';
+    sheetIcon.appendChild(iconEl.cloneNode(true));
     sheetTitle.textContent = card.querySelector('.card-stack__card-title').textContent;
     sheetText.textContent = card.querySelector('.card-stack__card-text').textContent;
 
