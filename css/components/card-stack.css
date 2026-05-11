@@ -73,9 +73,10 @@
 }
 
 .card-stack__card-icon {
-  font-size: 2rem;
+  height: 2.5rem;
+  width: auto;
+  display: block;
   margin-block-end: var(--space-4);
-  line-height: 1;
 }
 
 .card-stack__card-title {

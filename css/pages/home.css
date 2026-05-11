@@ -41,8 +41,10 @@
 }
 
 .career-card__arrow {
-  font-size: var(--text-lg);
-  color: var(--color-accent);
+  height: 1.25rem;
+  width: auto;
+  display: block;
+  align-self: flex-end;
   transition: transform var(--transition-fast);
 }
 
