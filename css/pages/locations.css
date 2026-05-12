@@ -1,1 +1,123 @@
-/* Locations overview page styles. */
+/* ── Card link (e.g. "Explore office" inside a card) ─────── */
+.card-stack__card-link {
+  display: inline-block;
+  margin-block-start: var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+}
+
+.card-stack__card-link:hover {
+  opacity: 0.75;
+}
+
+/* ── Singapore team quote grid ───────────────────────────── */
+.sg-team__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: var(--space-6);
+  margin-block-start: var(--space-12);
+  align-items: start;
+}
+
+.sg-team__col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.sg-team__grid .quote-card {
+  width: 100%;
+}
+
+.sg-team__photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .sg-team__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Office gallery section ───────────────────────────────── */
+.locations-gallery {
+  background: var(--color-white);
+  background-image: none;
+}
+
+.locations-gallery .why-join__values {
+  margin-block-start: 0;
+  align-items: start;
+}
+
+/* Dots are indicators — make them clickable */
+.locations-gallery .card-stack__dots {
+  justify-content: flex-start;
+  padding-inline: var(--space-1);
+}
+
+.locations-gallery .card-stack__dot {
+  cursor: pointer;
+  flex: 1;
+  max-width: 2rem;
+}
+
+.locations-gallery .card-stack__dot:hover:not(.is-active) {
+  background: rgb(var(--color-dark-blue-rgb) / 0.35);
+}
+
+/* ── Photo placeholder ────────────────────────────────────── */
+.locations-gallery__media {
+  position: relative;
+  user-select: none;
+}
+
+.locations-gallery__photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: rgb(var(--color-dark-blue-rgb) / 0.07);
+  display: block;
+  transition: opacity 0.25s ease;
+}
+
+.locations-gallery__photo.is-transitioning {
+  opacity: 0;
+}
+
+/* ── Arrow navigation ─────────────────────────────────────── */
+.locations-gallery__arrows {
+  position: absolute;
+  bottom: var(--space-4);
+  right: var(--space-4);
+  display: flex;
+  gap: var(--space-2);
+}
+
+.locations-gallery__arrow {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: none;
+  background: rgb(var(--color-white-rgb) / 0.92);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-dark-blue);
+  box-shadow: 0 2px 10px rgb(0 0 0 / 0.12);
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.locations-gallery__arrow:hover {
+  background: var(--color-accent);
+  color: var(--color-white);
+}

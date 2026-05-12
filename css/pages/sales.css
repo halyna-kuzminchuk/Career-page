@@ -489,3 +489,32 @@
     center top,
     0 0;
 }
+
+@media (max-width: 767px) {
+  .home-hero--sales,
+  .sales-culture,
+  .sales-autonomy,
+  .sales-fit {
+    background-image:
+      var(--dot-grid),
+      var(--dot-grid),
+      linear-gradient(
+        to bottom,
+        var(--photo-gradient-0) 0%,
+        var(--photo-gradient-25) 25%,
+        var(--photo-gradient-45) 45%,
+        var(--photo-gradient-55) 55%,
+        var(--photo-gradient-75) 75%,
+        var(--photo-gradient-100) 100%
+      );
+    background-size:
+      1px var(--grid-dot-gap),
+      1px var(--grid-dot-gap),
+      100% 100%;
+    background-position:
+      var(--container-gutter) top,
+      calc(100% - var(--container-gutter)) top,
+      0 0;
+    background-repeat: repeat-y, repeat-y, no-repeat;
+  }
+}
