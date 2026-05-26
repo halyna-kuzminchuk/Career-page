@@ -120,7 +120,7 @@
 }
 
 .sales-statement__body {
-  font-family: var(--font-text);
+  font-family: var(--font-body);
   font-size: clamp(var(--text-lg), 1.8vw, var(--text-2xl));
   font-weight: 400;
   line-height: 1.4;
@@ -470,28 +470,27 @@
 
 /* ── Sales hero ───────────────────────────────────────────── */
 .home-hero--sales {
-  background-image:
-    var(--dot-grid),
-    linear-gradient(
-      to bottom,
-      var(--photo-gradient-0) 0%,
-      var(--photo-gradient-25) 25%,
-      var(--photo-gradient-45) 45%,
-      var(--photo-gradient-55) 55%,
-      var(--photo-gradient-75) 75%,
-      var(--photo-gradient-100) 100%
-    );
-  background-size:
-    var(--grid-column-width) var(--grid-dot-gap),
-    100% 100%;
-  background-repeat: repeat, no-repeat;
-  background-position:
-    center top,
-    0 0;
+  background-image: var(--dot-grid);
+  background-color: var(--color-white);
+  background-size: var(--grid-column-width) var(--grid-dot-gap);
+  background-repeat: repeat;
+  background-position: center top;
 }
 
 @media (max-width: 767px) {
-  .home-hero--sales,
+  .home-hero--sales {
+    background-image:
+      var(--dot-grid),
+      var(--dot-grid);
+    background-size:
+      1px var(--grid-dot-gap),
+      1px var(--grid-dot-gap);
+    background-position:
+      var(--container-gutter) top,
+      calc(100% - var(--container-gutter)) top;
+    background-repeat: repeat-y, repeat-y;
+  }
+
   .sales-culture,
   .sales-autonomy,
   .sales-fit {
