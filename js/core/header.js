@@ -48,8 +48,36 @@
               <li><a class="main-nav__submenu-link" href="business-support.html">Business Support</a></li>
             </ul>
           </li>
-          <li class="main-nav__item">
-            <a class="main-nav__link" href="locations.html">Locations</a>
+          <li class="main-nav__item main-nav__item--has-menu">
+            <button
+              class="main-nav__summary"
+              type="button"
+              aria-expanded="false"
+              aria-controls="locations-menu"
+            >
+              Locations
+            </button>
+            <ul
+              class="main-nav__submenu"
+              id="locations-menu"
+              aria-label="Locations"
+              hidden
+            >
+              <li><a class="main-nav__submenu-link" href="locations.html">All locations</a></li>
+              <li><a class="main-nav__submenu-link" href="locations.html">Denmark</a></li>
+              <li><a class="main-nav__submenu-link" href="locations.html">Norway</a></li>
+              <li><a class="main-nav__submenu-link" href="locations.html">Sweden</a></li>
+              <li><a class="main-nav__submenu-link" href="locations.html">United Kingdom</a></li>
+              <li><a class="main-nav__submenu-link" href="locations.html">Germany</a></li>
+              <li><a class="main-nav__submenu-link" href="locations.html">France</a></li>
+              <li><a class="main-nav__submenu-link" href="locations.html">Italy</a></li>
+              <li><a class="main-nav__submenu-link" href="locations.html">Benelux</a></li>
+              <li><a class="main-nav__submenu-link" href="locations.html">Middle East</a></li>
+              <li><a class="main-nav__submenu-link" href="locations.html">Canada</a></li>
+              <li><a class="main-nav__submenu-link" href="locations.html">USA</a></li>
+              <li><a class="main-nav__submenu-link" href="singapore.html">Singapore</a></li>
+              <li><a class="main-nav__submenu-link" href="locations.html">Australia</a></li>
+            </ul>
           </li>
           <li class="main-nav__item">
             <a class="main-nav__link" href="sustainability.html">Sustainability</a>
@@ -57,11 +85,12 @@
         </ul>
         <div class="nav-cta">
           <a class="btn btn-space btn--primary btn--md" href="search.html">
+           
+            Search jobs
             <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="11" cy="11" r="7"/>
               <line x1="16.5" y1="16.5" x2="22" y2="22"/>
             </svg>
-            Jobs
           </a>
         </div>
       </nav>

@@ -15,7 +15,7 @@ body {
   color: var(--color-dark-blue);
   font-family: var(--font-body);
   font-size: var(--text-base);
-  line-height: 1.6;
+  line-height: 1.625;
 }
 
 img,

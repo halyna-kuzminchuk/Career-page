@@ -7,7 +7,7 @@
   --space-btn-accent-strong-rgb: var(--color-accent-rgb);
   --space-btn-nebula-a: 0.34;
   --space-btn-nebula-b: 0.16;
-  --space-btn-radius: 999px;
+  --space-btn-radius: var(--radius-xs);
   --mx: 70%;
   --my: 40%;
 
@@ -25,9 +25,8 @@
   font-size: var(--text-sm);
   font-weight: 600;
   line-height: 1;
-  letter-spacing: 0.14em;
+  letter-spacing: 0;
   text-decoration: none;
-  text-transform: uppercase;
   white-space: nowrap;
   cursor: pointer;
   overflow: visible;
@@ -245,7 +244,9 @@
 }
 
 .btn--md {
-  padding: 0.875rem 1.75rem;
+  padding: 0.625rem 0.9375rem;
+  min-height: 45px;
+  min-width: 225px;
   font-size: var(--text-base);
 }
 

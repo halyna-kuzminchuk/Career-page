@@ -48,7 +48,7 @@
   align-items: center;
   justify-content: center;
   border: 1px solid rgb(var(--color-cyan-rgb) / 0.45);
-  border-radius: 4px;
+  border-radius: var(--radius-xs);
   background-color: transparent;
   color: var(--color-white);
   cursor: pointer;
@@ -155,7 +155,7 @@
   display: block;
   padding: var(--space-3) var(--space-4);
   border: 0;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-xs);
   background: transparent;
   color: rgb(var(--color-white-rgb) / 0.75);
   font: inherit;
@@ -272,7 +272,7 @@
     padding: var(--space-3);
     background-color: var(--color-dark-blue);
     border: 0;
-    border-radius: 4px;
+    border-radius: var(--radius-xs);
     box-shadow: 0 1rem 2.5rem rgb(var(--color-dark-blue-rgb) / 12%);
     transform: translateX(-50%) translateY(-0.5rem);
   }
@@ -283,7 +283,7 @@
 
   .main-nav__submenu-link {
     padding: var(--space-2) var(--space-3);
-    border-radius: 4px;
+    border-radius: var(--radius-xs);
   }
 
   .main-nav__submenu-link:hover {

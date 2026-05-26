@@ -18,7 +18,7 @@
           </p>
           <a class="btn btn-space btn--primary btn--md" href="search.html">
             
-            Explore Roles
+            Explore open roles
           </a>
         </div>
         <div class="cta-banner__media">
