@@ -218,10 +218,13 @@
   font-size: var(--text-sm);
   font-weight: 700;
   text-decoration: none;
+  transition: background-color var(--transition-fast);
 }
 
 .nav-cta {
   margin-block-start: var(--space-4);
+  display: flex;
+  justify-content: center;
 }
 
 @media (min-width: 900px) {

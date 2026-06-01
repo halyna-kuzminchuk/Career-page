@@ -56,7 +56,6 @@
   align-items: start;
 }
 
-/* Dots are indicators — make them clickable */
 .locations-gallery .card-stack__dots {
   justify-content: flex-start;
   padding-inline: var(--space-1);

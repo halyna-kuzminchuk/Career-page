@@ -250,6 +250,64 @@
   font-size: var(--text-base);
 }
 
+/* ── Hero CTA button ───────────────────────────────────────── */
+.btn--cta {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-dark-blue);
+  color: var(--color-white);
+  transition:
+    color var(--transition-base),
+    transform var(--transition-fast);
+}
+
+.btn--cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-accent);
+  clip-path: circle(0% at 85% 50%);
+  transition: clip-path 0.55s ease;
+  pointer-events: none;
+}
+
+.btn--cta:hover {
+  color: var(--color-dark-blue);
+  transform: translateY(-1px);
+}
+
+.btn--cta:hover::before {
+  clip-path: circle(150% at 85% 50%);
+}
+
+.btn--cta:active {
+  transform: translateY(1px);
+}
+
+.btn__inner {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* Arrow: full chevron visible, only the stem draws in on hover */
+.btn__arrow {
+  flex-shrink: 0;
+}
+
+/* Horizontal line draws in from left on hover */
+.btn__arrow-line {
+  stroke-dasharray: 20;
+  stroke-dashoffset: 20;
+  transition: stroke-dashoffset 0.3s ease 0.1s;
+}
+
+.btn--cta:hover .btn__arrow-line {
+  stroke-dashoffset: 0;
+}
+
 .btn-space.btn--cyan {
   --space-btn-accent-rgb: var(--color-cyan-rgb);
   --space-btn-accent-soft-rgb: 130 226 255;

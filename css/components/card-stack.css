@@ -19,6 +19,7 @@
 }
 
 .card-stack__stage {
+  position: relative;
   display: grid;
   overflow: visible;
 }
@@ -109,4 +110,23 @@
 
 .card-stack__dot.is-active {
   background: var(--color-accent);
+}
+
+/* ── Next-card chevron ────────────────────────────────────── */
+.card-stack__next {
+  position: absolute;
+  right: var(--space-6);
+  bottom: var(--space-6);
+  z-index: 3;
+  background: none;
+  border: none;
+  padding: var(--space-2);
+  cursor: pointer;
+  color: rgb(var(--color-dark-blue-rgb) / 0.25);
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.card-stack__next:hover {
+  color: var(--color-dark-blue);
+  transform: translateX(2px);
 }

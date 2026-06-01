@@ -41,15 +41,21 @@
 }
 
 .career-card__arrow {
-  height: 1.25rem;
-  width: auto;
   display: block;
   align-self: flex-end;
-  transition: transform var(--transition-fast);
+  height: 1.125rem;
+  width: auto;
+  color: var(--color-dark-blue);
 }
 
-.career-card:hover .career-card__arrow {
-  transform: translateX(4px);
+.career-card__arrow-line {
+  stroke-dasharray: 20;
+  stroke-dashoffset: 20;
+  transition: stroke-dashoffset 0.3s ease 0.1s;
+}
+
+.career-card:hover .career-card__arrow-line {
+  stroke-dashoffset: 0;
 }
 
 @media (max-width: 767px) {
@@ -153,6 +159,21 @@
 
 .why-join__trigger:hover {
   background: rgb(255 255 255 / 0.28);
+}
+
+@media (pointer: coarse) {
+  .why-join__trigger::after {
+    content: '';
+    display: inline-block;
+    width: 0.65rem;
+    height: 0.8rem;
+    margin-left: 0.2em;
+    vertical-align: -0.15em;
+    background-image: url('../../assets/Pointer.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }
 
 /* ── Quote card ───────────────────────────────────────────── */
@@ -425,19 +446,23 @@
 
 /* ── Full-bleed Quote ─────────────────────────────────────── */
 .full-quote {
-  display: block;
+  overflow: hidden;
 }
 
 .full-quote__content {
   position: relative;
-  display: flex;
-  align-items: center;
   padding-block: var(--space-12);
+  padding-inline: var(--container-gutter);
   background: var(--color-white);
   background-image: var(--dot-grid);
   background-size: var(--grid-column-width) var(--grid-dot-gap);
   background-repeat: repeat;
   background-position: center top;
+}
+
+.full-quote__blockquote {
+  max-width: var(--container-max);
+  margin-inline: auto;
 }
 
 .full-quote__content::before {
@@ -450,10 +475,6 @@
   background: var(--color-accent);
 }
 
-.full-quote__blockquote {
-  width: 100%;
-}
-
 .full-quote__mark {
   display: block;
   width: 2.5rem;
@@ -462,13 +483,14 @@
 }
 
 .full-quote__text {
-  font-family: var(--font-text);
-  font-size: clamp(var(--text-sm), 2.2vw, var(--text-xl));
+  font-family: var(--font-body);
+  font-size: clamp(var(--text-base), 2.2vw, var(--text-xl));
   font-weight: 300;
-  line-height: 1.45;
+  line-height: 1.5;
   color: var(--color-dark-blue);
   font-style: normal;
   margin: 0 0 var(--space-8);
+  overflow-wrap: break-word;
 }
 
 .full-quote__author {
@@ -551,23 +573,6 @@
   overflow: hidden;
 }
 
-.cta-banner__media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    -51deg,
-    var(--photo-gradient-0) 0%,
-    var(--photo-gradient-25) 25%,
-    var(--photo-gradient-45) 45%,
-    var(--photo-gradient-55) 55%,
-    var(--photo-gradient-75) 75%,
-    var(--photo-gradient-100) 100%
-  );
-  mix-blend-mode: overlay;
-  pointer-events: none;
-  z-index: 1;
-}
 
 .cta-banner__image {
   width: 100%;

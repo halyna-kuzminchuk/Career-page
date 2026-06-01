@@ -16,9 +16,14 @@
             Your ideal role may exist across different areas at MacArtney.
             Explore where your skills can make an impact.
           </p>
-          <a class="btn btn-space btn--primary btn--md" href="search.html">
-            
-            Explore open roles
+          <a class="btn btn--cta btn--md" href="search.html">
+            <span class="btn__inner">
+              Explore open roles
+              <svg class="btn__arrow" width="22" height="18" viewBox="0 0 22 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="11,1 21,9 11,17"/>
+                <line class="btn__arrow-line" x1="1" y1="9" x2="21" y2="9"/>
+              </svg>
+            </span>
           </a>
         </div>
         <div class="cta-banner__media">

@@ -43,6 +43,8 @@ if (section) {
 
   if (triggers.length) setActive(triggers[0].dataset.card);
 
+  const cardStackHidden = () => window.matchMedia('(max-width: 767px)').matches;
+
   triggers.forEach(trigger => {
     trigger.addEventListener('mouseenter', () => {
       if (isTouch()) return;
@@ -51,7 +53,8 @@ if (section) {
 
     trigger.addEventListener('click', () => {
       if (!isTouch()) return;
-      openSheet(trigger.dataset.card);
+      setActive(trigger.dataset.card);
+      if (cardStackHidden()) openSheet(trigger.dataset.card);
     });
   });
 

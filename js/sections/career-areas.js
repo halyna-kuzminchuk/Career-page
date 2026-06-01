@@ -32,7 +32,10 @@
           <a href="${c.href}" class="career-card">
             <h3 class="career-card__title">${c.title}</h3>
             <p class="career-card__text">${c.text}</p>
-            <img src="assets/Arrow.svg" class="career-card__arrow" aria-hidden="true" alt="" />
+            <svg class="career-card__arrow" width="22" height="18" viewBox="0 0 22 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="11,1 21,9 11,17"/>
+              <line class="career-card__arrow-line" x1="1" y1="9" x2="21" y2="9"/>
+            </svg>
           </a>
         `).join('')}
       </div>
